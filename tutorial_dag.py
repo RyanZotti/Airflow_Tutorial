@@ -22,12 +22,12 @@ default_args = {
     # 'end_date': datetime(2016, 1, 1),
 }
 
-dag = DAG('tutorial', default_args=default_args)
+dag = DAG('rz_tutorial', default_args=default_args)
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
 t1 = BashOperator(
     task_id='print_date',
-    bash_command='date',
+    bash_command='sh /Users/ryanzotti/Documents/repos/Airflow_Tutorial/say_hello.sh',
     dag=dag)
 
 t2 = BashOperator(
